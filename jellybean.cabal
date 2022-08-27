@@ -5,16 +5,29 @@ author:             Cameron Dart
 maintainer:         cdart2@illinois.edu
 extra-source-files: CHANGELOG.md
 
+common example
+  hs-source-dirs:   example
+  default-language: Haskell2010
+  build-depends:    base
+                  , binary
+                  , bytestring
+                  , network
+                  , jellybean
 library
-    exposed-modules:  Network.Jellybean
-                    -- , Network.Jellybean.Client
-                    -- , Network.Jellybean.Server
-    build-depends:    base
-                    , binary
-                    , bytestring
-                    , network
-                    , unix
-    default-language: Haskell2010
-    ghc-options:      -Wall
-                      -O2
+  exposed-modules:  Network.Jellybean
+  build-depends:    base
+                  , binary
+                  , bytestring
+                  , network
+  default-language: Haskell2010
+  ghc-options:      -Wall
+                    -O2
+
+executable example-client
+  import:           example
+  main-is:          Client.hs
+
+executable example-server
+  import:           example
+  main-is:          Server.hs
 
