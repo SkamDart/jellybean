@@ -31,6 +31,6 @@
       };
       flake = pkgs.jellybean.flake {};
     in flake // {
-      defaultPackage = flake.packages."hello:exe:hello";
+      defaultPackage = flake.packages."jellybean:lib:jellybean";
     });
 }
