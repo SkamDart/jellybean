@@ -13,11 +13,10 @@ very simple message passing between two processes on the same device.
 -}
 module Network.Jellybean where
 
+import Control.Monad
 import Data.Binary
-
 import qualified Network.Socket as N
 import qualified Network.Socket.ByteString.Lazy as NBL
-import Control.Monad
 
 -- | Maximum size of an individual message.
 maxMessageSize :: Integral a => a
